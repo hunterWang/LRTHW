@@ -1,2 +1,2 @@
 # LRTHW
-try to practice exercise in Learn Ruby The Hard Way
+try&hope to practice&learn RoR in Hard Way
