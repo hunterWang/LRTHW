@@ -1,4 +1,6 @@
 Dwmo::Application.routes.draw do
+  resources :topics
+
   resources :people
 
     get "welcome/say_hello" => "welcome#say"
