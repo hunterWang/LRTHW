@@ -28,7 +28,7 @@ class TopicsController < ApplicationController
 
     respond_to do |format|
       if @topic.save
-        format.html { redirect_to @topic, notice: 'Topic was successfully created.' }
+        format.html { redirect_to topics_path, notice: 'Topic was successfully created.' }
         format.json { render action: 'show', status: :created, location: @topic }
       else
         format.html { render action: 'new' }
@@ -42,13 +42,19 @@ class TopicsController < ApplicationController
   def update
     respond_to do |format|
       if @topic.update(topic_params)
-        format.html { redirect_to @topic, notice: 'Topic was successfully updated.' }
+        format.html { redirect_to topics_path, notice: 'Topic was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
         format.json { render json: @topic.errors, status: :unprocessable_entity }
       end
     end
+  end
+  
+  def upvote
+      @topic = Topic.find(params[:id])
+      @topic.votes.create
+      redirect_to(topics_path)
   end
 
   # DELETE /topics/1

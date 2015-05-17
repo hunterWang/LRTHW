@@ -1,2 +1,13 @@
 text can i upload to github
 upload by ungit??
+
+
+def my_Opinion(fruits)
+fruits.each do |fruit|
+if fruit == "pizza" 
+puts "Pizza is awesome"
+else 
+puts pluralize(fruit) + "are taste good, i guess"
+end
+end
+end
